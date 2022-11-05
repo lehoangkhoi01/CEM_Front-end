@@ -1,0 +1,18 @@
+import { makeStyles } from "@material-ui/core";
+
+const drawerWidth = 240;
+export const useStyles = makeStyles((theme) => ({
+  container: {
+    marginTop: "100px",
+    marginBottom: "100px",
+    width: `calc(100% - ${drawerWidth}px)`,
+    marginLeft: drawerWidth,
+    maxWidth: "unset",
+    minHeight: "90vh",
+  },
+  fab: {
+    position: "fixed",
+    bottom: "20px",
+    right: theme.spacing(2),
+  },
+}));
