@@ -7,11 +7,19 @@ import Typography from "@material-ui/core/Typography";
 import Badge from "@material-ui/core/Badge";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
-import { AccountCircle, Mail, Notifications } from "@material-ui/icons";
+import {
+  AccountCircle,
+  Mail,
+  Notifications,
+  ExitToApp,
+} from "@material-ui/icons";
 import { useStyles } from "./style";
+import { useHistory } from "react-router";
 
 const Header = () => {
   const classes = useStyles();
+  const history = useHistory();
+
   const [anchorEl, setAnchorEl] = useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
 
@@ -29,6 +37,11 @@ const Header = () => {
   const handleMenuClose = () => {
     setAnchorEl(null);
     handleMobileMenuClose();
+  };
+
+  const handleLogout = () => {
+    localStorage.clear();
+    window.location.reload();
   };
 
   const menuId = "primary-search-account-menu";
@@ -93,7 +106,7 @@ const Header = () => {
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar className={classes.root}>
           <Typography className={classes.title} variant="h6" noWrap>
-            Material-UI
+            FPT Event Management
           </Typography>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
@@ -112,10 +125,10 @@ const Header = () => {
               aria-label="account of current user"
               aria-controls={menuId}
               aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
+              onClick={handleLogout}
               color="inherit"
             >
-              <AccountCircle />
+              <ExitToApp />
             </IconButton>
           </div>
         </Toolbar>

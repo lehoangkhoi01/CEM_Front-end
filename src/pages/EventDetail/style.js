@@ -19,4 +19,47 @@ export const useStyles = makeStyles((theme) => ({
   subtitle: {
     fontWeight: "bold",
   },
+
+  footer: {
+    display: "flex",
+    justifyContent: "space-between",
+    padding: "15px",
+  },
+  avatars: {
+    display: "flex",
+  },
+
+  largeIcon: {
+    width: theme.spacing(6),
+    height: theme.spacing(6),
+  },
+
+  largeAvatar: {
+    width: theme.spacing(10),
+    height: theme.spacing(10),
+    margin: "10px",
+  },
+
+  link: {
+    display: "flex",
+    alignItems: "center",
+  },
+  media: {
+    marginLeft: "auto",
+    marginRight: "auto",
+    width: "60%",
+    height: "60vh",
+    objectFit: "contain",
+  },
+  borderGrid: {
+    borderBottom: "1px solid black",
+    textAlign: "center",
+  },
+  borderRight: {
+    borderRight: "1px solid black",
+  },
+  backdrop: {
+    zIndex: theme.zIndex.drawer + 1,
+    color: "#fff",
+  },
 }));

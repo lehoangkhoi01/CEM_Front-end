@@ -16,6 +16,7 @@ import {
 import { red } from "@material-ui/core/colors";
 import { useStyles } from "./style";
 import { convertDateTimeToString } from "../../helpers/datetimeUtil";
+import { Link } from "react-router-dom";
 
 export default function RecipeReviewCard({ event, isFollowed = false }) {
   const classes = useStyles();
@@ -33,7 +34,7 @@ export default function RecipeReviewCard({ event, isFollowed = false }) {
             alt={ownerClub.clubName}
           />
         }
-        title={<Typography>{ownerClub.clubName}</Typography>}
+        title={<Typography className={classes.clubName}>{ownerClub.clubName}</Typography>}
         subheader={convertDateTimeToString(event.eventStartTime)}
       />
       <CardActionArea>
@@ -43,7 +44,7 @@ export default function RecipeReviewCard({ event, isFollowed = false }) {
           title={event.clubName}
         />
         <CardContent>
-          <Typography variant="h6" color="textSecondary" component="p">
+          <Typography className={classes.eventName} variant="h6" color="textSecondary" component="p">
             {event.eventName}
           </Typography>
         </CardContent>
@@ -59,7 +60,7 @@ export default function RecipeReviewCard({ event, isFollowed = false }) {
             <FavoriteIcon />
           </IconButton>
         )}
-        <Button size="medium" color="primary" href="/app/event">
+        <Button component={Link} size="medium" color="primary" to={`/app/event/${event.id}`}>
           Details
         </Button>
       </CardActions>

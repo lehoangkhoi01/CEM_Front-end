@@ -9,6 +9,7 @@ import EventPost from "../../pages/EventPosts/EventPost";
 import NotFound from "../NotFound";
 import ClubDetail from "../../pages/ClubDetail/ClubDetail";
 import EventDetail from "../../pages/EventDetail/EventDetail";
+import AdminDraftEvents from "../../pages/AdminDraftEvents/AdminDraftEvents";
 
 const Layout = () => {
   return (
@@ -19,9 +20,10 @@ const Layout = () => {
         <Slidebar />
         <Switch>
           <Route path="/app/clubs" component={Club} />
-          <Route path="/app/club" component={ClubDetail} />
+          <Route path="/app/club/:id" component={ClubDetail} />
           <Route path="/app/events/:page" component={Events} />
-          <Route path="/app/event" component={EventDetail} />
+          <Route path="/app/admin/draft/:page" component={AdminDraftEvents} />
+          <Route path="/app/event/:id" component={EventDetail} />
           <Route path="/app/posts" component={EventPost} />
           <Route component={NotFound} />
         </Switch>

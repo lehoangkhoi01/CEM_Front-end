@@ -8,7 +8,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 import { useHistory } from "react-router-dom";
-import { Home, Event, Group } from "@material-ui/icons";
+import { Home, Event, Group, Drafts } from "@material-ui/icons";
 
 import { useStyles } from "./style";
 
@@ -60,14 +60,15 @@ export default function Slidebar() {
       </List>
       <Divider />
       <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+        <ListItem button key={3}>
+          <ListItemIcon>
+            <Drafts />
+          </ListItemIcon>
+          <ListItemText
+            primary="Draft Events"
+            onClick={() => history.push("/app/admin/draft/1")}
+          />
+        </ListItem>
       </List>
     </Drawer>
   );

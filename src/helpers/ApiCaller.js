@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_BACKEND_URL = "https://localhost:5051";
+const BASE_BACKEND_URL = "https://localhost:49155";
 
 const baseGet = async (path, params) => {
   let token = localStorage.getItem("token");

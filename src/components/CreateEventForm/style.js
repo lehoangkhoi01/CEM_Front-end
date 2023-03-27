@@ -5,6 +5,10 @@ export const useStyles = makeStyles((theme) => ({
     flexWrap: "wrap",
     marginTop: "40px",
   },
+  backdrop: {
+    zIndex: theme.zIndex.drawer + 1,
+    color: '#fff',
+  },
   textField: {
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),

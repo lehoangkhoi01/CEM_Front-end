@@ -11,3 +11,12 @@ export const useStyles = makeStyles((theme) => ({
     height: 450,
   },
 }));
+
+export const useImageStyle = makeStyles({
+  root: {
+    width: "100%", 
+    padding: "2px",
+    height: "unset"
+  }
+}, { name: 'MuiImageListItem' });
+

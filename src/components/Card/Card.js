@@ -8,16 +8,26 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
+    height: "100%",
   },
   media: {
     height: 140,
     backgroundSize: "contain",
   },
   description: {
+    minHeight: "40px",
+    "-webkit-line-clamp": 2,
+    display: "-webkit-box",
+    overflow: "hidden",
+    "-webkit-box-orient": "vertical",
+  },
+  clubName: {
+    minHeight: "65px",
     "-webkit-line-clamp": 2,
     display: "-webkit-box",
     overflow: "hidden",
@@ -27,11 +37,6 @@ const useStyles = makeStyles({
 
 export default function MediaCard({ club }) {
   const classes = useStyles();
-  const history = useHistory();
-
-  const redirectToClubDetail = () => {
-    history.push("/app/club");
-  };
 
   return (
     <Card className={classes.root}>
@@ -42,7 +47,12 @@ export default function MediaCard({ club }) {
           title={club.clubName}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography
+            className={classes.clubName}
+            gutterBottom
+            variant="h5"
+            component="h2"
+          >
             {club.clubName}
           </Typography>
           <Typography
@@ -51,16 +61,18 @@ export default function MediaCard({ club }) {
             component="p"
             className={classes.description}
           >
-            {club.clubDescription}
+            {club.summary}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary" onClick={redirectToClubDetail}>
+        <Button
+          component={Link}
+          size="medium"
+          color="primary"
+          to={`/app/club/${club.clubProfileId}?page=1`}
+        >
           Details
-        </Button>
-        <Button size="small" color="primary">
-          Events
         </Button>
       </CardActions>
     </Card>

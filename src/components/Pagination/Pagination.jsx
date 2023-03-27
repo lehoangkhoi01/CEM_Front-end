@@ -22,12 +22,28 @@ export default function PaginationOutlined({
   currentPage = 1,
   totalPage = 5,
   url,
+  searchQuery = null,
 }) {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-      <Pagination
+      {
+        searchQuery ? (<Pagination
+        page={Number.parseInt(currentPage)}
+        className={classes.pagination}
+        count={totalPage}
+        variant="outlined"
+        color="primary"
+        renderItem={(item) => (
+          <PaginationItem
+            component={Link}
+            to={`${url}?${searchQuery}`}
+            {...item}
+          />
+        )}
+      />)
+        : (<Pagination
         page={Number.parseInt(currentPage)}
         className={classes.pagination}
         count={totalPage}
@@ -40,7 +56,10 @@ export default function PaginationOutlined({
             {...item}
           />
         )}
-      />
+      />)
+
+      }
+      
     </div>
   );
 }

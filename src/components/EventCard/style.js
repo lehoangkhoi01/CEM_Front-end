@@ -17,7 +17,16 @@ export const useStyles = makeStyles((theme) => ({
   expandOpen: {
     transform: "rotate(180deg)",
   },
-  avatar: {
-    backgroundColor: "red",
+  eventName: {
+    "-webkit-line-clamp": 1,
+    display: "-webkit-box",
+    overflow: "hidden",
+    "-webkit-box-orient": "vertical",
   },
+  clubName: {
+    "-webkit-line-clamp": 1,
+    display: "-webkit-box",
+    overflow: "hidden",
+    "-webkit-box-orient": "vertical",
+  }
 }));

@@ -15,6 +15,7 @@ export const useStyles = makeStyles((theme) => ({
     display: "flex",
     width: "100%",
     justifyContent: "center",
+    marginBottom: "20px",
   },
 
   avatar: {

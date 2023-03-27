@@ -18,19 +18,19 @@ export const useStyles = makeStyles((theme) => ({
   },
   inputRoot: {
     marginRight: "40px",
-    backgroundColor: '#ECEFF1',
+    backgroundColor: "#ECEFF1",
     borderRadius: "5px",
   },
   inputInput: {
     padding: theme.spacing(1),
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: '40ch',
+    transition: theme.transitions.create("width"),
+    width: "100%",
+    [theme.breakpoints.up("md")]: {
+      width: "40ch",
     },
   },
   backdrop: {
     zIndex: theme.zIndex.drawer + 1,
-    color: '#fff',
+    color: "#fff",
   },
 }));

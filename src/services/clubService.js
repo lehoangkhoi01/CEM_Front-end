@@ -6,4 +6,16 @@ const getClubs = async () => {
   return result;
 };
 
-export { getClubs };
+const getClubDetail = async (id) => {
+  let result = await ApiCaller.get(`api/ClubProfile/${id}`);
+  return result;
+}
+
+
+//POST
+const createNewClub = async (data) => {
+  let result = await ApiCaller.post(`api/ClubProfile`, data);
+  return result;
+}
+
+export { getClubs, getClubDetail, createNewClub };

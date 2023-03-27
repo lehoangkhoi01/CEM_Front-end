@@ -1,7 +1,6 @@
 import {
   Card,
   CardContent,
-  CardMedia,
   CardActions,
   Typography,
   IconButton,
@@ -13,19 +12,18 @@ import BasicImageList from "../ImageList/ImageList";
 import PostHeader from "./PostHeader/PostHeader";
 import { useStyles } from "./style";
 
-const Post = () => {
+
+const Post = ({postDetail}) => {
   const classes = useStyles();
   return (
     <Card className={classes.root}>
-      <PostHeader />
+      <PostHeader postDetail={postDetail}/>
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the
-          mussels, if you like.
+          {postDetail.Content}
         </Typography>
       </CardContent>
-      <BasicImageList />
+      <BasicImageList folderPic={postDetail.Picture}/>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
           <FavoriteIcon />
